@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>KarenFlix</title>
+  <link rel="stylesheet" href="../styles/register.css">
+</head>
+<body>
+<div>
+    <h1>Registro de Usuario</h1>
+
+  <form id="registerForm">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="email">Correo:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Contraseña:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <p id="mensaje"></p>
+    <p>¿Ya tienes cuenta? <a href="../index.html">Inicia Sesion</a></p>
+</div>
+
+</body>
+<script src="../scripts/register.js"></script>
+</html>

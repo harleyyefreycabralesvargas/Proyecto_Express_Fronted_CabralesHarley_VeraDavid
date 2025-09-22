@@ -1,0 +1,21 @@
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 70px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: left;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('../imagenes/peliculas.webp');
+}
+h1 {
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-family: Arial, sans-serif;
+    width: 200px;
+}

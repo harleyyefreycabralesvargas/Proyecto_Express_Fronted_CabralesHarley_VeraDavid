@@ -4,14 +4,49 @@ input[type="password"] {
     width: 50%;
     padding: 12px 20px 10px 10px;
     margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 100px;
+    
+    border-radius: 20px;
     box-sizing: border-box;
+
 }
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-image: url('/pruebaaaa/imagenes/peliculas.png');
+    background-image: url('../imagenes/peliculas.webp');
 }
+.regi-Form{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 70px;
+    box-shadow: 0 0 10px rgba(204, 202, 202, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: left;
+}
+input[type="submit"], button {
+    background-color: #e30505;
+    color: rgb(0, 0, 0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 8px 0;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 100%;
+}
+a[href="../index.html"] {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #bb0909;
+    font-weight: bold;
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+

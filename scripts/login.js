@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
           // Redirigir según el rol
           if (result.usuario.rol === "admin") {
-            window.location.href = "admin.html";
+            window.location.href = "./pages/admin.html";
           } else {
-            window.location.href = "usuario.html";
+            window.location.href = "./pages/user.html";
           }
         } else {
           mensaje.textContent = "Error: " + (result.error || "Credenciales inválidas");

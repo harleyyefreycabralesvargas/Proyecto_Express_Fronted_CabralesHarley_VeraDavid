@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Borrar datos guardados
         localStorage.removeItem("token");
         localStorage.removeItem("rol");
-
         // Redirigir al login
         window.location.href = "../index.html";
     });

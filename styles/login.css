@@ -1,8 +1,8 @@
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 70px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 200px;
+    padding top: 50px;
+    padding-top: 100;
     max-width: 400px;
     margin: 50px auto;
     text-align: left;
@@ -12,10 +12,41 @@ body {
     padding: 0;
     height: 100%;
     background-image: url('../imagenes/peliculas.webp');
+    background-color: black;
 }
 h1 {
     text-align: center;
-    color: rgb(255, 0, 0);
+    font-size: 20px;
+
+    color: rgb(232, 230, 230);
     font-family: Arial, sans-serif;
-    width: 200px;
+    }
+
+a[href="./pages/register.html"] {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #e8e6e6;
+    font-weight: bold;
+    ;
+    font-size: 12px;
+}
+input[type="email"],
+input[type="password"] {
+    width: 50%;
+    padding: 12px 20px 10px 10px;
+    margin: 8px 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+
+}
+button {
+    width: 50%;
+    background-color: lab(53.23% 80.11 67.22);
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
 }

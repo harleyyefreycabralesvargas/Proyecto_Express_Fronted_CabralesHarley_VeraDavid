@@ -1,52 +1,100 @@
-.container {
-    position: relative;
-    top: 200px;
-    padding top: 50px;
-    padding-top: 100;
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: left;
+
+body {
+  
+    background-color: #000000;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
 }
+
+
+
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
     background-image: url('../imagenes/peliculas.webp');
+    min-height: 100vh; /* ocupa toda la pantalla */
+    display: flex;             /* activamos flexbox */
+    justify-content: center;   /* centra horizontal */
+    align-items: center;       /* centra vertical */
     background-color: black;
+    
+    background-position: center;
 }
-h1 {
+
+/* Contenedor */
+.container {
+    background-color: white;
+    width: 90%;          /* ancho en móviles */
+    max-width: 500px;    /* límite en pantallas pequeñas */
+    padding: 20px;
+    border-radius: 15px;
     text-align: center;
+    box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(204, 202, 202);
+}
+
+/* Título */
+h1 {
     font-size: 20px;
-
-    color: rgb(232, 230, 230);
+    margin: 10px auto;
+    color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
-    }
+}
 
+/* Enlace */
 a[href="./pages/register.html"] {
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
-    color: #e8e6e6;
+    color: #ff0000;
     font-weight: bold;
-    ;
-    font-size: 12px;
+    font-size: 18px;
 }
+
+/* Inputs responsivos */
 input[type="email"],
 input[type="password"] {
-    width: 50%;
-    padding: 12px 20px 10px 10px;
-    margin: 8px 0;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
     border-radius: 20px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
-
+    font-size: 14px;
+    color: #000;
 }
+
+/* Botón */
 button {
-    width: 50%;
-    background-color: lab(53.23% 80.11 67.22);
+    width: 100%;
+    background-color: lab(53.13% 79.62 66.05);
     color: white;
-    padding: 10px 10px;
-    margin: 8px 0;
+    padding: 12px;
+    margin-top: 15px;
     border: none;
-    border-radius: 70px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+/* 🔹 Media queries */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px; /* tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 700px; /* laptops/PC */
+    }
 }

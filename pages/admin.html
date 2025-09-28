@@ -2,62 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/admin.css">
 </head>
 
 <body>
-    <h1>adminnn</h1>
-    <button id="logoutBtn">Cerrar Sesión</button>
-    <h1>Bienvenido Admin</h1>
+  <div class="barra_opciones">
+  <button id="logoutBtn">Cerrar Sesión</button>
+  
+    <!-- ===== CRUD PELÍCULAS ===== -->
+<div class="crud-menu">
+  <button class="menu-btn">Administrar Películas ⌄</button>
+  <div class="menu-options">
+    <button data-action="add-pelicula">Añadir Película</button>
+    <button data-action="update-pelicula">Actualizar Película</button>
+    <button data-action="delete-pelicula">Eliminar Película</button>
+    <button data-action="search-pelicula">Buscar Película</button>
+  </div>
+</div>
 
-    <!-- Botón para gestionar -->
-    <button id="gestionarPeliculasBtn">Gestionar Películas</button>
+<!-- ===== CRUD CATEGORÍAS ===== -->
+<div class="crud-menu">
+  <button class="menu-btn">Administrar Categorías ⌄</button>
+  <ul class="menu-options">
+    <button data-action="add-categoria">Añadir Categoría</button>
+    <button data-action="update-categoria">Actualizar Categoría</button>
+    <button data-action="delete-categoria">Eliminar Categoría</button>
+    <button data-action="search-categoria">Buscar Categoría</button>
+  </ul>
+</div>
 
-    <!-- Sección oculta de gestión -->
-    <div id="gestionPeliculas" style="display:none; margin-top:20px;">
-        <h2>CRUD de Películas</h2>
-
-        <!-- Añadir -->
-        <h3>Añadir Película</h3>
-        <form id="formAgregar">
-            <input type="text" id="tituloAdd" placeholder="Título" required><br>
-            <input type="text" id="directorAdd" placeholder="Director" required><br>
-            <input type="text" id="descripcionAdd" placeholder="Descripcion"><br>
-            <input type="number" id="categoriaAdd" placeholder="Categoria"><br>
-            <input type="date" id="fechaAdd" required><br>
-            <input type="text" id="posterAdd" placeholder="Poster de la pelicula"><br>
-            <button type="submit">Añadir</button>
-        </form>
-
-        <!-- Buscar -->
-        <h3>Buscar Película por nombre</h3>
-        <form id="formBuscar">
-            <input type="text" id="tituloBuscar" placeholder="Título a buscar" required>
-            <button type="submit">Buscar</button>
-        </form>
-        <div id="contenedor_pelicula_obtenida"></div>
-        <pre id="resultadoBuscar"></pre>
-
-        <!-- Actualizar -->
-        <h3>Actualizar Película</h3>
-        <form id="formActualizar">
-            <input type="text" id="tituloUpdate" placeholder="Título existente" required><br>
-            <input type="text" id="nuevoDirector" placeholder="Nuevo Director"><br>
-            <input type="date" id="nuevaFecha"><br>
-            <input type="text" id="nuevoGenero" placeholder="Nuevo Género"><br>
-            <button type="submit">Actualizar</button>
-        </form>
-
-        <!-- Eliminar -->
-        <h3>Eliminar Película</h3>
-        <form id="formEliminar">
-            <input type="text" id="tituloDelete" placeholder="Título a eliminar" required>
-            <button type="submit">Eliminar</button>
-        </form>
-    </div>
+</div>
+</div>
+</div>
+<!-- ===== MODAL ===== -->
+<div id="crudModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modalBody">
+      <!-- Aquí se cargan los formularios -->
+</div>
 </body>
-<script src="../scripts/admin.js"></script>
 
+<script src="../scripts/admin.js"></script>
 </html>

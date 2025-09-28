@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Película</title>
+    <link rel="stylesheet" href="../styles/detallePeli.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="detalleContainer" class="detalle-container"></div>
+
+    <div class="detalle-container">
+        <!-- Cuadro principal de información -->
+        <div id="infoPelicula" class="info-pelicula"></div>
+
+        <!-- Zona de abajo -->
+        <div class="detalle-bottom">
+            <!-- Reseñas -->
+            <div class="detalle-reseñas">
+                <h3>Reseñas</h3>
+                <div id="reseñasContainer"></div>
+            </div>
+            <!-- Formulario reseña -->
+            <div class="detalle-form" id="detalle-form">
+                <h3>Escribir reseña</h3>
+                <form id="formReseña">
+                    <textarea id="textoReseña" placeholder="Escribe tu reseña aquí..." required></textarea>
+                    <label for="calificacion">Calificación (1-10):</label>
+                    <select id="calificacion" required>
+                        <option value="">--Selecciona--</option>
+                        <option value="1">1 ⭐</option>
+                        <option value="2">2 ⭐</option>
+                        <option value="3">3 ⭐</option>
+                        <option value="4">4 ⭐</option>
+                        <option value="5">5 ⭐</option>
+                        <option value="6">6 ⭐</option>
+                        <option value="7">7 ⭐</option>
+                        <option value="8">8 ⭐</option>
+                        <option value="9">9 ⭐</option>
+                        <option value="10">10 ⭐</option>
+                    </select>
+                    <button type="submit">Enviar reseña</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button id="btnVolver">⬅ Volver al menú principal</button>
+</body>
+<script src="../scripts/detallePeli.js"></script>
+
+</html>

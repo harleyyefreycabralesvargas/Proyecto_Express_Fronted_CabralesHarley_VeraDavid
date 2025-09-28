@@ -1,0 +1,337 @@
+.cabezal{
+  height: 50px;
+  display: flex;
+  background-color: #ff0000;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+#logoutBtn {
+    
+    color: white;
+    background-color: #000000;
+    border: none;
+    padding: 10px 10px 0px 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+:root {
+  --item-w: 200px; /* ancho base */
+  --item-h: 350px; /* alto base */
+  --gap: 14px;     /* espacio entre items */
+  --visible: 5;    /* número de items visibles por defecto */
+}
+
+.carrusel-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px 0px 0px ;
+}
+
+.carrusel-viewport {
+  overflow: hidden;
+  width: calc(
+    (var(--item-w) * var(--visible)) +
+    (var(--gap) * (var(--visible) - 1))
+  );
+}
+
+.carrusel-track {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  transition: transform 600ms cubic-bezier(.22, .9, .3, 1);
+}
+
+.carrusel-item {
+  width: var(--item-w);
+  height: var(--item-h);
+  flex: 0 0 var(--item-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 600ms ease, opacity 600ms ease;
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 8px;
+  display: block;
+}
+
+/* Escalas */
+.carrusel-item.center {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 30;
+  
+  pointer-events: auto;
+}
+.carrusel-item.near {
+  transform: scale(0.7);
+  opacity: 0.8;
+  z-index: 20;
+  pointer-events: auto;
+}
+.carrusel-item.far {
+  transform: scale(0.5);
+  opacity: 0.5;
+  z-index: 10;
+  pointer-events: auto;
+}
+.carrusel-item.hidden {
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 1024px) {
+  :root {
+    --visible: 3;   /* solo 3 items visibles */
+    --item-w: 140px;
+    --item-h: 210px;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --visible: 1;   /* solo 1 item (el centro) */
+    --item-w: 180px;
+    --item-h: 260px;
+  }
+}
+
+.user-container {
+    max-width: 4300px;
+    
+    padding: 0px 20px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #ca1111;
+    padding: 15px;
+    border-radius: 100px;
+    border: 2px solid #000000;
+    font-family: 'Arial', sans-serif;
+
+
+
+  }
+  
+  .filter-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    background: #000000;
+    color: white;
+    transition: background 0.3s;
+  }
+  
+  .filter-buttons button:hover {
+    background: #000000;
+  }
+  
+  .peliculas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    
+  }
+  
+  .pelicula-card {
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 0px;
+    background: #000000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+
+
+  }
+  
+  .pelicula-card img {
+    width: 100%;
+    margin-top: 5px;
+    object-fit: cover;
+    border-radius: 6px;
+    max-width: 150px;
+    min-width:100px;
+    height: 200px;
+    margin-bottom: 10px;
+
+
+  }
+  
+  .pelicula-card h3 {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    width: 150px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+  
+  .pelicula-card div p {
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 22px;
+    padding: 0px;
+    color: white;
+
+  }
+
+  .pelicula-card button{
+    background-color: #d30000;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    top: 100%;
+
+}
+body {
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  h2{
+    color: #ffffff;
+    font-size: 70px;
+  }
+
+.categorias-layout {
+  display: block;
+}
+
+.categoria-section {
+  margin-bottom: 2rem;
+}
+
+.pelis-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.peliculas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.categorias-row {
+ display: flex;
+  gap: 1rem;
+  overflow-x: auto;   /* scroll horizontal dentro de cada categoría */
+  padding: 0.5rem 0;
+}
+
+.peliculas-card {
+  flex: 0 0 auto;   /* que no se encoja */
+  width: 200px;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.peliculas-card {
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 5px;
+    background: #000000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 200px;
+
+
+
+  }
+  
+  .peliculas-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    max-width: 150px;
+    min-width:100px;
+    height: 200px;
+    margin-bottom: 10px;
+
+
+  }
+  
+  .peliculas-card h3 {
+    justify-content: left;
+    color: #ffffff;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+  
+  .peliculas-card div p {
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 22px;
+    padding: 5px;
+    color: white;
+
+  }
+
+  .peliculas-card button{
+    background-color: #d30000;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    top: 100%;
+
+}
+
+.categorias-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.categorias-row::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}

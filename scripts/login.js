@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("loginForm");
     const mensaje = document.getElementById("mensaje");
-  
+    const API_BASE = window.location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "https://proyecto-express-backend-cabraleharley.onrender.com";
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
   
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
   
       try {
-        const res = await fetch("http://localhost:3000/1.5.2/api/auth/login", {
+        const res = await fetch(`${API_BASE}/1.5.2/api/auth/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
           mensaje.style.color = "red";
         }
       } catch (error) {
-        mensaje.textContent = "⚠️ Error de conexión con el servidor";
+        mensaje.textContent = "Error de conexión con el servidor";
         mensaje.style.color = "red";
       }
     });

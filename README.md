@@ -1,11 +1,11 @@
-# 🎥 Frontend Proyecto Películas
+# Frontend Proyecto Películas
 
 Este es el **frontend** de la aplicación de gestión y visualización de películas.  
 Fue desarrollado con **HTML, CSS y JavaScript Vanilla**, y se conecta al backend mediante **fetch API** con autenticación JWT.
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 - **HTML5** → estructura de las vistas.  
 - **CSS3** → estilos personalizados y diseño responsive.  
 - **JavaScript (ES6+)** → lógica del cliente y comunicación con el backend.  
@@ -55,7 +55,7 @@ Fue desarrollado con **HTML, CSS y JavaScript Vanilla**, y se conecta al backend
 
 ---
 
-## 📖 Variables importantes en el frontend
+## Variables importantes en el frontend
 
 - localStorage.token → guarda el JWT del usuario.  
 - localStorage.rol → guarda el rol (user o admin).  
@@ -64,7 +64,7 @@ Fue desarrollado con **HTML, CSS y JavaScript Vanilla**, y se conecta al backend
 
 ---
 
-## ▶️ Cómo ejecutar
+## Cómo ejecutar
 
 1. Clonar el repositorio:  
    ```bash 

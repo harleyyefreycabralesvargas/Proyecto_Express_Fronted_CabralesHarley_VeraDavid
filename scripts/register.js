@@ -1,6 +1,8 @@
 const form = document.getElementById("registerForm");
 const mensaje = document.getElementById("mensaje");
-
+const API_BASE = window.location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "https://proyecto-express-backend-cabraleharley.onrender.com";
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -11,7 +13,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch("http://localhost:3000/1.5.2/api/auth/register", {
+    const res = await fetch(`${API_BASE}/1.5.2/api/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)

@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
     const titulo = params.get("titulo");
+    const API_BASE = window.location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "https://proyecto-express-backend-cabraleharley.onrender.com";
 
-    const API_PELIS = "http://localhost:3000/1.5.2/api/peliculas";
-    const API_RESEÑAS = "http://localhost:3000/1.5.2/api/resenas";
+    const API_PELIS = `${API_BASE}/1.5.2/api/peliculas`;
+    const API_RESEÑAS = `${API_BASE}/1.5.2/api/resenas`;
     const token = localStorage.getItem("token");
 
     const infoDiv = document.getElementById("infoPelicula");

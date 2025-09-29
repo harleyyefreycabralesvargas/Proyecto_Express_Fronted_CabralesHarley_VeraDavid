@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // === CONFIG ===
-  const API_PELIS = "http://localhost:3000/1.5.2/api/peliculas";
+  const API_BASE = window.location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "https://proyecto-express-backend-cabraleharley.onrender.com";
+  const API_PELIS = `${API_BASE}/1.5.2/api/peliculas`;
   const token = localStorage.getItem("token");
 
     document.getElementById("btnBuscar")?.addEventListener("click", async () => {

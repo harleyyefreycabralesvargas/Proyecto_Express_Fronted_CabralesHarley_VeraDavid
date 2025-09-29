@@ -1,6 +1,5 @@
-
 body {
-  
+
     background-color: #000000;
     color: #ece5e5;
     margin: 0;
@@ -26,12 +25,12 @@ body {
     background: #000000;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    color : #ffffff;
-   
+    color: #ffffff;
+
 }
 
 .info-pelicula img {
@@ -39,16 +38,39 @@ body {
     border-radius: 6px;
     margin-bottom: 15px;
 }
-#calificaciones{
+
+#calificaciones {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 20%;
     font-size: 25px;
 }
-.contenidoPeli{
 
+#contenidoPeli {
+    padding: 0;
+    margin: 0;
+    gap: 0;
 }
+
+#contenidoPeli p {
+    padding: 10px;
+    margin: 0;
+    gap: 0;
+    font-size: 30px;
+}
+
+#contenidoPeli h1 {
+    padding: 5px;
+    margin: 0;
+    gap: 0;
+    font-size: 50px;
+}
+
+.secciones {
+    color: red;
+}
+
 /* Parte inferior: reseñas + form */
 .detalle-bottom {
     display: grid;
@@ -64,16 +86,19 @@ body {
     padding: 15px;
     max-height: 400px;
     overflow-y: auto;
-    color : #ffffff;
+    color: #ffffff;
 
 }
-#contadorLikes{
+
+#contadorLikes {
     display: flex;
 }
-#btnLike, #btnDislike{
+
+#btnLike,
+#btnDislike {
     background: #000000;
     border: 2px solid #000000;
-    border-radius:1px;
+    border-radius: 1px;
     color: white;
     display: flex;
     cursor: pointer;
@@ -82,34 +107,39 @@ body {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    margin: 4px ;
+    margin: 4px;
     transition-duration: 0.4s;
 
 
     margin-top: 10px;
     background-color: #000000;
 }
-#btnLike img, #btnDislike img{
-   height: 80px;
+
+#btnLike img,
+#btnDislike img {
+    height: 80px;
 }
-#btnLike h2{
+
+#btnLike h2 {
     font-size: 70px;
     color: rgb(0, 255, 42);
     margin: 0;
     padding: 0;
     text-align: center;
- }
- #btnDislike h2{
+}
+
+#btnDislike h2 {
     font-size: 70px;
     color: rgb(235, 0, 0);
     margin: 0;
     padding: 0;
     text-align: center;
- }
-#contadorLikes button{
+}
+
+#contadorLikes button {
     color: rgb(228, 210, 210);
     font-size: 20px;
-  background-color: #000000;
+    background-color: #000000;
     border: none;
     cursor: pointer;
     padding: 12px 12px;
@@ -119,15 +149,12 @@ body {
 
 }
 
-#contadorLikes span{
+#contadorLikes span {
     color: white;
     background-color: #e2d3d3;
     cursor: pointer;
     padding: 0;
     margin: 20px 3px
-
-  
-
 }
 
 
@@ -145,14 +172,29 @@ body {
     background: rgb(0, 0, 0);
     border: 1px solid #ffffff;
     border-radius: 8px;
-    padding: 15px;
+    padding: 3px;
 }
 
+.detalle-form h3 {
+    margin: 0;
+    font-size: 60px;
+}
+.detalle-form strong{
+    margin: 0;
+    color: red;
+    font-size: 60px;
+}
+.detalle-form p {
+    font-size: 40px;
+}
+.calificacion{
+    font-size: 70px;
+}
 .detalle-form textarea {
     width: 100%;
     height: 100px;
     margin-bottom: 10px;
-    padding: 8px;
+    padding: 3px;
     border-radius: 6px;
     border: 1px solid #ccc;
     resize: none;
@@ -161,27 +203,18 @@ body {
     background: #ffffff;
 }
 
-
-
-
-
-
-
 .detalle-form select,
 .detalle-form button {
     display: block;
     width: 100%;
     margin-bottom: 10px;
-    padding: 8px;
+    padding: 3px;
     border-radius: 6px;
     border: 1px solid #111111;
     font-size: 16px;
     background: #ffffff;
     color: #000000;
     font-weight: bold;
-
-   
-
 }
 
 .detalle-form button {
@@ -189,11 +222,12 @@ body {
     color: white;
     cursor: pointer;
     font-weight: bold;
-    border-radius:56px; ;
+    border-radius: 56px;
+    ;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid #000000;
-    padding: 10px;
+    padding: 3px;
 
 }
 
@@ -201,33 +235,24 @@ body {
     background: #ff0000;
     color: #fff;
     border: 2px solid #000000;
-
-
-
-
 }
 
 /* Botón volver */
 #btnVolver {
     display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
+    margin: 10px auto;
+    padding: 10px 10px;
     background: #fcfcfc;
     color: rgb(0, 0, 0);
     border: none;
     cursor: pointer;
     font-weight: bold;
     border: 2px solid #000000;
-    border-radius:56px;
+    border-radius: 56px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    
-
-
-
 }
-#eliminarReseña
 
-#btnVolver:hover {
+#eliminarReseña #btnVolver:hover {
     background: #000000;
 }

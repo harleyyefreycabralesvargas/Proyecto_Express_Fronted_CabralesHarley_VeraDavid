@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
 }
+
 #logoutBtn {
     
     color: white;
@@ -335,3 +336,4 @@ body {
   background: #555;
   border-radius: 4px;
 }
+

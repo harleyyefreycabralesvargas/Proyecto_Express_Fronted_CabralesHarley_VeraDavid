@@ -7,43 +7,54 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/admin.css">
 </head>
-
-<body>
-  <div class="barra_opciones">
   <button id="logoutBtn">Cerrar Sesión</button>
-  
-    <!-- ===== CRUD PELÍCULAS ===== -->
-<div class="crud-menu">
-  <button class="menu-btn">Administrar Películas ⌄</button>
-  <div class="menu-options">
-    <button data-action="add-pelicula">Añadir Película</button>
-    <button data-action="update-pelicula">Actualizar Película</button>
-    <button data-action="delete-pelicula">Eliminar Película</button>
-    <button data-action="search-pelicula">Buscar Película</button>
+<main id="crudContainer">
+  <!-- Añadir -->
+  <div class="crud-card">
+    <h2>➕ Añadir Película</h2>
+    <form id="formAdd">
+      <input type="text" name="titulo" placeholder="Título" required>
+      <input type="text" name="director" placeholder="Director" required>
+      <textarea name="descripcion" placeholder="Descripción"></textarea>
+      <input type="text" name="categoria" placeholder="Categoría" required>
+      <input type="date" name="fechaPublicacion" required>
+      <input type="text" name="poster" placeholder="Link del poster">
+      <button type="submit">Añadir</button>
+    </form>
   </div>
-</div>
 
-<!-- ===== CRUD CATEGORÍAS ===== -->
-<div class="crud-menu">
-  <button class="menu-btn">Administrar Categorías ⌄</button>
-  <ul class="menu-options">
-    <button data-action="add-categoria">Añadir Categoría</button>
-    <button data-action="update-categoria">Actualizar Categoría</button>
-    <button data-action="delete-categoria">Eliminar Categoría</button>
-    <button data-action="search-categoria">Buscar Categoría</button>
-  </ul>
-</div>
+  <!-- Actualizar -->
+  <div class="crud-card">
+    <h2>✏️ Actualizar Película</h2>
+    <form id="formUpdate">
+      <input type="text" name="titulo" placeholder="Título a actualizar" required>
+      <textarea name="descripcion" placeholder="Nueva descripción"></textarea>
+      <input type="text" name="categoria" placeholder="Nueva Categoría">
+      <input type="date" name="fechaPublicacion">
+      <input type="text" name="poster" placeholder="Nuevo poster">
+      <button type="submit">Actualizar</button>
+    </form>
+  </div>
 
-</div>
-</div>
-</div>
-<!-- ===== MODAL ===== -->
-<div id="crudModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="modalBody">
-      <!-- Aquí se cargan los formularios -->
-</div>
+  <!-- Eliminar -->
+  <div class="crud-card">
+    <h2>🗑️ Eliminar Película</h2>
+    <form id="formDelete">
+      <input type="text" name="titulo" placeholder="Título a eliminar" required>
+      <button type="submit">Eliminar</button>
+    </form>
+  </div>
+
+  <!-- Buscar/Listar -->
+  <div class="crud-card">
+    <h2>🔍 Buscar Películas</h2>
+    <form id="formSearch">
+      <input type="text" name="titulo" placeholder="Buscar por título">
+      <button type="submit">Buscar</button>
+    </form>
+    <div id="resultadoBusqueda"></div>
+  </div>
+</main>
 </body>
 
 <script src="../scripts/admin.js"></script>

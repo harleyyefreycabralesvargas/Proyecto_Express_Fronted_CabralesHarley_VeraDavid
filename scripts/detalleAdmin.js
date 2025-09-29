@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Botón volver
     document.getElementById("btnVolver").addEventListener("click", () => {
-        window.location.href = "user.html";
+        window.location.href = "admin.html";
     });
 });
 

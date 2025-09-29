@@ -1,7 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
   // === CONFIG ===
-  const API_PELIS = "http://localhost:3000/v8/api/peliculas";
+  const API_PELIS = "http://localhost:3000/1.5.2/api/peliculas";
   const token = localStorage.getItem("token");
+
+    document.getElementById("btnBuscar")?.addEventListener("click", async () => {
+    const query = document.getElementById("inputBusqueda").value.trim();
+    if (!query) {
+      alert("Escribe un nombre para buscar");
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_PELIS}/buscar/${encodeURIComponent(query)}`, {
+        headers: { "Authorization": "Bearer " + token }
+      });
+      if (!res.ok) throw new Error("Error en la búsqueda");
+
+      const peliculas = await res.json();
+      renderPeliculas(peliculas);
+    } catch (err) {
+      console.error("Error al buscar:", err);
+      contenedor.innerHTML = "<p>Error en la búsqueda.</p>";
+    }
+  });
 
   // === LOGOUT ===
   const logoutBtn = document.getElementById("logoutBtn");

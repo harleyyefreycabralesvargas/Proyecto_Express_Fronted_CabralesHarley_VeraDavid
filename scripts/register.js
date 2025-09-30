@@ -1,9 +1,11 @@
 const form = document.getElementById("registerForm");
 const mensaje = document.getElementById("mensaje");
-const API_BASE = window.location.hostname.includes("localhost")
+const API_BASE = window.location.hostname.includes("127")
         ? "http://localhost:3000"
         : "https://proyecto-express-backend-cabraleharley.onrender.com";
-form.addEventListener("submit", async (e) => {
+  console.log(API_BASE);
+  
+        form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = {

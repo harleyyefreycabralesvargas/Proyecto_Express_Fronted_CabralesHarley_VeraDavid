@@ -1,46 +1,36 @@
-
 body {
-  
     background-color: #000000;
-    color: #000000;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-
-}
-
-
-
-body {
-    margin: 0;
-    padding: 0;
     background-image: url('../imagenes/peliculas.webp');
     min-height: 100vh; 
     display: flex;           
     justify-content: center;  
     align-items: center; 
-    background-color: black;
-    
+    color: white;
+    font-size: 40px;
     background-position: center;
 }
 
-
 .container {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.55);
     width: 90%;         
     max-width: 500px;    
     padding: 20px;
     border-radius: 15px;
     text-align: center;
     box-sizing: border-box;
-        box-shadow: 0 0 10px rgba(204, 202, 202);
+    box-shadow: 0 0 10px rgba(204, 202, 202);
 }
 
-
+.karen{
+    width: 100%;
+}
 h1 {
-    font-size: 20px;
+    font-size: 70px;
     margin: 10px auto;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
 }
 
@@ -51,7 +41,7 @@ a[href="./pages/register.html"] {
     text-decoration: none;
     color: #ff0000;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px;
 }
 
 
@@ -63,7 +53,7 @@ input[type="password"] {
     border-radius: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 30px;
     color: #000;
 }
 
@@ -77,7 +67,7 @@ button {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 40px;
 }
 
 

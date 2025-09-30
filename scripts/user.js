@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // === CONFIG ===
-  const API_BASE = window.location.hostname.includes("localhost")
+  const API_BASE = window.location.hostname.includes("127")
         ? "http://localhost:3000"
         : "https://proyecto-express-backend-cabraleharley.onrender.com";
+
+console.log(API_BASE)
   const API_PELIS = `${API_BASE}/1.5.2/api/peliculas`;
   const token = localStorage.getItem("token");
 
@@ -107,6 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     porCategoria.forEach(p => {
+      console.log(p.titulo)
+      console.log(p.categoria)
+      console.log(p)
       let seccion = document.getElementById(`cat-${p.categoria}`);
       if (!seccion) {
         seccion = document.createElement("div");

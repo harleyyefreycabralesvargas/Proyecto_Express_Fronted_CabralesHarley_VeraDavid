@@ -1,26 +1,80 @@
-.cabezal{
-  height: 50px;
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.cabezal {
+  min-height: 80px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #ff0000;
-  margin: 0 auto;
-  padding: 0;
+  border: 2px solid white;
+}
+
+.karen {
+  min-width: 60px;
+  max-width: 30%;
+  height: 100%;
+  padding: 0%;
+}
+
+#buscador {
+  display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
+  flex: 1; 
+  gap: 5px; 
+}
+
+#inputBusqueda {
+  width:70%;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: none;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+#inputBusqueda::placeholder {
+  color: white;
+  font-size: 0.9em
+}
+
+#btnBuscar {
+  padding: 6px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#btnBuscar:hover {
+  background-color: #333;
 }
 
 #logoutBtn {
-    
-    color: white;
-    background-color: #000000;
-    border: none;
-    padding: 10px 10px 0px 0px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-    z-index: 1000;
-    transition: background-color 0.3s;
-  }
+  color: red;
+  background-color: #000;
+  border: none;
+  height: 100%;
+  font-size: 20px;
+  width: 120px;
+  padding: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 3%;
+  min-width: 60px;
+  max-width: 30%;
+  height: 100%;
+  padding: 0%;
+  background-size: cover;
+}
+span{
+  color: white
+}
 :root {
   --item-w: 200px; /* ancho base */
   --item-h: 350px; /* alto base */
@@ -115,7 +169,6 @@
 
 .user-container {
     max-width: 4300px;
-    
     padding: 0px 20px;
   }
   
@@ -127,12 +180,9 @@
     flex-wrap: wrap;
     background: #ca1111;
     padding: 15px;
-    border-radius: 100px;
+    border-radius: 7px;
     border: 2px solid #000000;
     font-family: 'Arial', sans-serif;
-
-
-
   }
   
   .filter-buttons button {

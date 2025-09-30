@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("loginForm");
     const mensaje = document.getElementById("mensaje");
-    const API_BASE = window.location.hostname.includes("localhost")
+    const API_BASE = window.location.hostname.includes("127")
         ? "http://localhost:3000"
         : "https://proyecto-express-backend-cabraleharley.onrender.com";
+        console.log(API_BASE)
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-  
       const data = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value

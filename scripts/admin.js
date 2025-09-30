@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logoutBtn");
-  const API_BASE = window.location.hostname.includes("localhost")
+  const API_BASE = window.location.hostname.includes("127")
   ? "http://localhost:3000"
   : "https://proyecto-express-backend-cabraleharley.onrender.com";
 

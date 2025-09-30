@@ -7,54 +7,43 @@ input[type="password"] {
     border-radius: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 30px;
     color: #000;
 }
 
 body {
-
     background-color: #000000;
-    color: #000000;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-
-}
-
-
-
-body {
-    margin: 0;
-    padding: 0;
     background-image: url('../imagenes/peliculas.webp');
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+    min-height: 100vh; 
+    display: flex;           
+    justify-content: center;  
+    align-items: center; 
+    color: white;
+    font-size: 40px;
     background-position: center;
 }
 
 .regi-Form {
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 90%;         
+    max-width: 500px;    
     padding: 20px;
-    width: 90%;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(204, 202, 202);
-    max-width: 400px;
-    margin: 50px auto;
+    border-radius: 15px;
     text-align: center;
-    max-width: 500px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(204, 202, 202);
 }
 
 a[href="../index.html"] {
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
-    color: #e50808;
+    color: #ff0000;
     font-weight: bold;
-    ;
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .container {
@@ -72,6 +61,10 @@ a[href="../index.html"] {
     box-sizing: border-box;
 }
 
+.karen{
+    width: 100%;
+}
+
 h1 {
     text-align: center;
     color: oklch(62.793% 0.25768 29.223);
@@ -86,7 +79,7 @@ button {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 40px;
 }
 
 input[placeholder] {

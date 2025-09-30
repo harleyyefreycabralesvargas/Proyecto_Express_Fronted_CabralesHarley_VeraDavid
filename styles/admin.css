@@ -4,6 +4,40 @@ body{
   width: 100%;
   background-size: cover;
 }
+.cabezal {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.karen {
+  min-width: 100px;
+  max-width: 50%;
+  height: 100%;
+  padding: 0%;
+}
+
+
+#logoutBtn {
+  color: red;
+  background-color: #000;
+  border: none;
+  height: 100%;
+  font-size: 50px;
+  width: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 60px;
+  max-width: 40%;
+  height: 100%;
+  padding: 0%;
+  background-size: cover;
+}
+span{
+  color: white
+}
+
 #crudContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

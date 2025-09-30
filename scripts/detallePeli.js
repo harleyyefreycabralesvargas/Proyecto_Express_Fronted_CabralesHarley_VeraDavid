@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const reseñasContainer = document.getElementById("reseñasContainer");
     const contenedorForm = document.getElementById("detalle-form");
 
-    // ================= FUNCIONES ================= //
-
-    // Mostrar info de la película
     async function cargarPelicula() {
         const res = await fetch(`${API_PELIS}/${encodeURIComponent(titulo)}`, {
             headers: { "Authorization": "Bearer " + token }
@@ -26,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const infoDiv = document.getElementById("infoPelicula");
         infoDiv.innerHTML = `
         <div id="acciones">
+        <img src="../imagenes/logo.png">
         <img src="${pelicula.poster}">
         <div id="calificaciones">
         <h2>${(pelicula.rating ?? 0).toFixed(1)} ⭐</h2>
@@ -48,20 +46,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
 `;
 
-        // 👉 Aquí actualizas el contador
         const contadorLikes = document.getElementById("contadorLikes");
         contadorLikes.innerHTML = `
         <button id="btnLike"><img src ="../imagenes/like.webp"><h2>${pelicula.likes?.length || 0}</h2></button>
         <button id="btnDislike"><img src ="../imagenes/dislike.webp"><h2>${pelicula.dislikes?.length || 0}</h2></button>`;
 
-        // 👉 Y aquí enganchas los botones
         document.getElementById("btnLike").addEventListener("click", async () => {
             const res = await fetch(`${API_PELIS}/${encodeURIComponent(titulo)}/like`, {
                 method: "POST",
                 headers: { "Authorization": "Bearer " + token }
             });
             if (res.ok) {
-                cargarPelicula(); // recargar para actualizar contador
+                cargarPelicula(); 
             }
         });
 
@@ -71,12 +67,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 headers: { "Authorization": "Bearer " + token }
             });
             if (res.ok) {
-                cargarPelicula(); // recargar para actualizar contador
+                cargarPelicula(); 
             }
         });
     }
 
-    // Listar reseñas
     async function cargarReseñas() {
         reseñasContainer.innerHTML = "Cargando...";
         const res = await fetch(`${API_RESEÑAS}/${encodeURIComponent(titulo)}`, {
@@ -94,31 +89,34 @@ document.addEventListener("DOMContentLoaded", async () => {
             const div = document.createElement("div");
             div.classList.add("reseña-card");
             div.innerHTML = `
-          <h2>${r.usuario}</h2>
-          <h2>${r.calificacion}/10 ⭐</h2>
-          <p>${r.texto}</p>
-          <small>📅 ${r.fecha}</small>
-        `;
+    <div class="reseña-header">
+        <h2 class="correo">${r.usuario}</h2>
+        <h2 class="calificacion">${r.calificacion}/10 ⭐</h2>
+    </div>
+    <p>${r.texto}</p>
+    <div class="reseña-footer">
+        <small>📅 ${r.fecha}</small>
+    </div>
+`;
             reseñasContainer.appendChild(div);
         });
     }
 
-    // Mostrar formulario edición
     function mostrarFormularioEdicion(reseña) {
         contenedorForm.innerHTML = `
         <h3>Editar reseña</h3>
         <form id="formEditarReseña">
-          <textarea id="textoReseña" required>${reseña.texto}</textarea>
-          <label for="calificacion">Calificación (1-10):</label>
-          <select id="calificacion" required>
+            <textarea id="textoReseña" required>${reseña.texto}</textarea>
+            <label for="calificacion">Calificación (1-10):</label>
+            <select id="calificacion" required>
             ${[...Array(10)].map((_, i) => {
             const val = i + 1;
             return `<option value="${val}" ${reseña.calificacion === val ? "selected" : ""}>${val} ⭐</option>`;
         }).join("")}
-          </select>
-          <button type="submit">Guardar cambios</button>
+            </select>
+            <button type="submit">Guardar cambios</button>
         </form>
-      `;
+        `;
 
         document.getElementById("formEditarReseña").addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -147,21 +145,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Revisar si el usuario ya tiene reseña
     async function cargarMiReseña() {
         const res = await fetch(`${API_RESEÑAS}/mias/${encodeURIComponent(titulo)}`, {
             headers: { Authorization: "Bearer " + token },
         });
-
         if (res.ok) {
             const reseña = await res.json();
             contenedorForm.innerHTML = `
-          <h3>Tu reseña</h3>
-          <strong>Calificación:</strong> 
-          <p class="calificacion">${reseña.calificacion}⭐</p>
-          <p><strong>Comentario:</strong> ${reseña.texto}</p>
-          <button id="editarReseña">✏️ Editar</button>
-          <button id="eliminarReseña">🗑️ Eliminar</button>
+            <strong>Calificación:</strong> 
+            <p class="calificacion">${reseña.calificacion}⭐</p>
+            <p><strong>Comentario:</strong> ${reseña.texto}</p>
+            <button id="editarReseña">✏️ Editar</button>
+            <button id="eliminarReseña">🗑️ Eliminar</button>
         `;
 
             document.getElementById("editarReseña").addEventListener("click", () => {
@@ -182,15 +177,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         } else {
             contenedorForm.innerHTML = `
-          <h3>Escribir reseña</h3>
-          <form id="formReseña">
+            <h3>Escribir reseña</h3>
+            <form id="formReseña">
             <textarea id="textoReseña" placeholder="Escribe tu reseña aquí..." required></textarea>
             <label for="calificacion">Calificación (1-10):</label>
             <select id="calificacion" required>
-              ${[...Array(10)].map((_, i) => `<option value="${i + 1}">${i + 1} ⭐</option>`).join("")}
+                ${[...Array(10)].map((_, i) => `<option value="${i + 1}">${i + 1} ⭐</option>`).join("")}
             </select>
             <button type="submit">Enviar reseña</button>
-          </form>
+            </form>
         `;
 
             document.getElementById("formReseña").addEventListener("submit", async (e) => {
@@ -217,13 +212,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // ================= INICIO ================= //
-
     await cargarPelicula();
     await cargarReseñas();
     await cargarMiReseña();
 
-    // Botón volver
     document.getElementById("btnVolver").addEventListener("click", () => {
         window.location.href = "user.html";
     });
